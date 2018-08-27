@@ -3,13 +3,19 @@ const webpack = require('webpack')
 const common = require('./webpack.common.js')
 
 module.exports = merge(common, {
-    mode: 'development',
-    devtool: 'inline-source-map',
-    devServer: {
-        contentBase: './dist'
-    },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoEmitOnErrorsPlugin()
+  mode: 'development',
+  entry: {
+    app: [
+      'webpack-hot-middleware/client',
+      './src/app/index.js'
     ]
+  },
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist'
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
+  ]
 })

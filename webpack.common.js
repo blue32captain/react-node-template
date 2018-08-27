@@ -5,10 +5,7 @@ let FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = {
   entry: {
-    app: [
-      'webpack-hot-middleware/client',
-      './src/app/index.js'
-    ]
+    app: './src/app/index.js'
   },
   module: {
     rules: [
