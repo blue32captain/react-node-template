@@ -1,7 +1,7 @@
-import {combineReducers} from 'redux'
+import { combineReducers } from 'redux'
 
-const test = (state = {}, action = {}) => ({...state, ...action})
+const test = (s = {}, a) => ({ ...s, a })
 
 export const rootReducer = combineReducers({
-  test
+  test,
 })

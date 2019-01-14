@@ -1,14 +1,14 @@
-// const jsonPost = data => ({
+// export const post = (url, data) => fetch(url, {
 //   method: 'POST',
 //   headers: new Headers({
 //     'Accept': 'application/json',
 //     'Content-Type': 'application/json',
-//     'x-access-token': `${localStorage.getItem('jwt')}`
+//     'Authorization': `Bearer ${localStorage.getItem('jwt')}`
 //   }),
 //   body: JSON.stringify(data)
 // })
 
-// const basicGetHeaders = () => ({
+// export const get = url => fetch(url, {
 //   method: 'GET',
-//   headers: new Headers({'x-access-token': `${localStorage.getItem('jwt')}`}),
+//   headers: new Headers({'Authorization': `Bearer ${localStorage.getItem('jwt')}`}),
 // })

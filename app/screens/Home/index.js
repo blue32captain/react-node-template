@@ -1,26 +1,29 @@
-import React, {Component} from 'react'
-import injectSheet from 'react-jss'
-import {connect} from 'react-redux'
-import {styles} from './styles'
+import React from 'react'
+import { connect } from 'react-redux'
+import styled from 'styled-components'
+import { Button, SubTitle, Title } from '../../components/common'
 
-class home extends Component {
-  componentDidMount() {
+const HomeRoot = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+`
 
-  }
-
-  render() {
-    const {classes} = this.props
-    return (
-      <div className={classes.root}>
-        test
-      </div>
-    )
-  }
-}
+const Home = () => (
+  <HomeRoot>
+    <Title>This is your workspace</Title>
+    <SubTitle>
+      This is some very informative text explaining the react test
+    </SubTitle>
+    <Button>dummy button</Button>
+  </HomeRoot>
+)
 
 const mapStateToProps = () => ({})
 const mapDispatchToProps = () => ({})
 
-export const Home = injectSheet(styles)(
-  connect(mapStateToProps, mapDispatchToProps)(home)
-)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home)
