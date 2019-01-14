@@ -1,23 +1,30 @@
 import React from 'react'
-import {hot} from 'react-hot-loader'
-import {HashRouter as Router, Redirect, Route, Switch} from 'react-router-dom'
-import {Provider} from 'react-redux'
-import {configureStore} from './store'
-import {Home} from './screens/Home'
+import { HashRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { configureStore } from './store'
+import Home from './screens/Home'
+import { hot } from 'react-hot-loader/root'
+import { setConfig } from 'react-hot-loader'
+import Layout from './components/Layout'
 
+setConfig({
+  ignoreSFC: true,
+  pureRender: true,
+})
 
 const store = configureStore({})
 
-const App = () =>
+const App = () => (
   <Router>
     <Provider store={store}>
-      <div>
+      <Layout>
         <Switch>
-          <Route path='/index' component={Home}/>
-          <Route path='/' render={() => <Redirect to='/index'/>}/>
+          <Route path="/home" component={Home} />
+          <Route path="/" render={() => <Redirect to="/home" />} />
         </Switch>
-      </div>
+      </Layout>
     </Provider>
   </Router>
+)
 
-export const Root = hot(module)(App)
+export default hot(App)
