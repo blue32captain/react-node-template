@@ -3,8 +3,9 @@ const fetch = require('node-fetch')
 
 module.exports = express.Router().get('/someEndPoint', async (req, res) => {
   try {
-    const result = await fetch('https://www.google.com').then(x => x.json())
-    res.status(200).json({ result })
+    const response = await fetch('https://venmo.com/api/v5/public?limit=1')
+    const data = await response.json()
+    res.status(response.status).json(data)
   } catch (error) {
     res.status(400).json(error)
   }

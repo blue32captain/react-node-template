@@ -28,7 +28,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './app/index.html',
-      title: 'Output Management',
+      title: 'jordan boilerplate',
     }),
   ],
   output: {
